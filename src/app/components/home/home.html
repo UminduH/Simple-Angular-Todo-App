@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Simple To-Do App (Angular)</h1>
+
+  <button class="theme-toggle" (click)="toggleTheme()">
+    @if (isDarkMode) {
+    <span>☀︎</span> Light Mode
+    } @else {
+    <span>☪︎</span> Dark Mode
+    }
+    <!-- {{ isDarkMode ? '☀ Light Mode' : '🌙 Dark Mode' }} -->
+  </button>
+
+  <div class="input-group">
+    <input type="text" [(ngModel)]="newTodo" placeholder="Enter a task..." (keydown.enter)="addTodo()">
+    <button class="add-todo" (click)="addTodo()">Add</button>
+  </div>
+
+  <div class="filters" [@fadeInOut]>
+    <button [class.active]="filter === 'all'" (click)="setFilter('all')">All</button>
+    <button [class.active]="filter === 'active'" (click)="setFilter('active')">Active</button>
+    <button [class.active]="filter === 'completed'" (click)="setFilter('completed')">Completed</button>
+  </div>
+
+  <div class="todo-list">
+    @if (filteredTodos.length === 0) {
+    @if (filter === 'all') {
+    <p class="empty-message">You have no todos yet. Time to add some!</p>
+    }
+    @else if (filter === 'active') {
+    <p class="empty-message">No active todos. Great job staying on top of things!</p>
+    }
+    @else if (filter === 'completed') {
+    <p class="empty-message">No completed todos. Get cracking!</p>
+    }
+    }
+    @else {
+    @for (todo of filteredTodos; track $index) {
+    <app-todo-item [todo]="todo"></app-todo-item>
+    }
+    }
+  </div>
+</div>

@@ -1,0 +1,85 @@
+.container {
+  background-color: var(--card);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+input {
+  font-family: "Inter", sans-serif;
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: var(--button);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+button.add-todo:hover {
+  background: #006bde;
+}
+
+.theme-toggle {
+  margin-bottom: 1rem;
+  background: none;
+  border: 1px solid var(--theme-toggle-button-border);
+  color: var(--theme-toggle-button-text);
+  padding: 6px 12px;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--theme-toggle-button-hover-bg);
+}
+
+.theme-toggle > span {
+  color: var(--theme-toggle-button-text);
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.filters {
+  margin: 10px 0;
+}
+
+.filters button {
+  margin-right: 10px;
+  padding: 6px 12px;
+  border: none;
+  background: #d3d3d3;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background: #00a6ff;
+  color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.empty-message {
+  color: var(--secondary-text);
+  padding: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
